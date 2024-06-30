@@ -9,16 +9,18 @@ from transformers import pipeline
 
 seg = "==================================================================================================================================================================================================="
 app = FastAPI()
-model_name = "google/gemma-2-27b-it"
+# model_name = "google/gemma-2-27b-it"
+model_name = "rainjay/gemma-2-27b-it-4bit"
 
 pipe = pipeline(
     "text-generation",
     model=model_name,
     model_kwargs={
         "torch_dtype": torch.bfloat16,
-        "quantization_config": {
-            "load_in_8bit": True
-        }
+        # "quantization_config": {
+        #     # "load_in_8bit": True.
+        #     "load_in_4bit": True,
+        # }
     },
     device_map="auto"
 )

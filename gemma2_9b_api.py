@@ -18,7 +18,7 @@ pipe = pipeline(
     {
         "torch_dtype": torch.bfloat16,
     },
-    device_map="auto"
+    device="cuda",
 )
 
 
