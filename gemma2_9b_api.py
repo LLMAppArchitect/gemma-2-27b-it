@@ -1,3 +1,4 @@
+import os
 import time
 from datetime import datetime
 
@@ -61,6 +62,9 @@ def completions(input_data: InputData):
 
 
 if __name__ == '__main__':
+    os.environ['CUDA_LAUNCH_BLOCKING'] = '1'
+    os.environ['CUDA_DEVICE_ASSERT'] = '0'
+
     # 启动API服务
     uvicorn.run(app,
                 host="0.0.0.0",
