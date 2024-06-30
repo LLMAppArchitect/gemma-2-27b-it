@@ -36,6 +36,7 @@ def completions(input_data: InputData):
     s = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
     start = time.time()
     print(f'开始时间:{s}')
+
     print(input_data.prompt)
 
     messages = [
@@ -46,9 +47,6 @@ def completions(input_data: InputData):
         max_new_tokens=input_data.max_tokens,
         do_sample=False,
     )
-
-    s = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-
     assistant_response = outputs[0]["generated_text"][-1]["content"]
 
     print(assistant_response)
