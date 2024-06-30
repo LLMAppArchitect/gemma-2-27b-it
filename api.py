@@ -17,11 +17,7 @@ pipe = pipeline(
     model=model_name,
     model_kwargs={
         "torch_dtype": torch.bfloat16,
-        # "attn_implementation": "flash_attention_2",
-        # "quantization_config": {
-        #     # "load_in_8bit": True.
-        #     "load_in_4bit": True,
-        # }
+        # "quantization_config": {"load_in_4bit": True},
     },
     device_map="auto"
 )
