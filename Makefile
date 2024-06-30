@@ -1,5 +1,7 @@
 run:
 	./run.sh
+run9b:
+	./run9b.sh
 
 k:
 	./kill.sh
