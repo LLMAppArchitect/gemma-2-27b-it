@@ -17,6 +17,7 @@ pipe = pipeline(
     model=model_name,
     model_kwargs={
         "torch_dtype": torch.bfloat16,
+        # "attn_implementation": "flash_attention_2",
         # "quantization_config": {
         #     # "load_in_8bit": True.
         #     "load_in_4bit": True,
@@ -36,7 +37,7 @@ class InputData(BaseModel):
 def completions(input_data: InputData):
     print(seg)
     s = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    start = time.time()
+    start = int(time.time())
     print(f'开始时间:{s}')
 
     print(input_data.prompt)
@@ -55,7 +56,7 @@ def completions(input_data: InputData):
 
     print(seg)
     t = datetime.now().strftime('%Y-%m-%d %H:%M:%S')
-    end = time.time()
+    end = int(time.time())
     print(f'结束时间:{t}')
     print(f'总字数:{len(assistant_response)}')
     print(f'耗时：{end - start} 秒)')

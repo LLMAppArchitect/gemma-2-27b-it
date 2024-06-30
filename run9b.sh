@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python gemma2_9b_api.py
+CUDA_LAUNCH_BLOCKING=1 python gemma2_9b_api.py

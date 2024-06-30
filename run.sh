@@ -1,2 +1,2 @@
 #!/usr/bin/env bash
-python api.py
+CUDA_LAUNCH_BLOCKING=1 python api.py
